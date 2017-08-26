@@ -108,5 +108,14 @@ Replace `[user]` and `[password]` on the last line with your desired credentials
 ## Port Forwarding
 Log into your router (I can't help you with this, there are too many brands of routers for me to know them all)
 First assign your OctoPi and Static IP address.
-Go to the `port forwarding` section of your router's settings and forward port `443` to the static IP address you just assigned your OctoPi.
+
+Go to the `port forwarding` section of your router's settings and forward `TCP` port `443` to the static IP address you just assigned your OctoPi.
+
 Optionally, you can also forward port `9080` to allow others to view your webcam without credentials.
+
+##  Reboot/Restart
+Restart HAProxy or just plain reboot your Pi.
+```
+sudo service haproxy restart
+```
+You're done!!
