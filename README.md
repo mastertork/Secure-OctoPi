@@ -1,7 +1,13 @@
 # Secure-HAProxy
 A more secure configuration for HAProxy when setting up your Octoprint instance on a Raspberry Pi.
+If you know what you're doing, just take my [haproxy.cfg](/haproxy.cfg) and copy it to your Pi.
+You will need to create a directory `/var/empty` and `chmod 0` it for the jail.
 
-# Getting Started
+For the rest....keep on reading :)
+
+
+
+## Getting Started
 Before pointing your Raspberry Pi internet facing, lets make sure it is up to date and secure.
 ```
 sudo apt update && apt upgrade
@@ -11,7 +17,7 @@ Once your Pi is up to date ensure that HAProxy is installed.
 ```
 sudo apt install haproxy
 ```
-# Create a Jail for HAProxy
+## Create a Jail for HAProxy
 In my [haproxy.cfg](/haproxy.cfg) file it tells haproxy to drop its privleges and jail itself to an empty directory without any access permissions.  This is for the unlikely event that someone discovers an exploit in HAProxy and manages to break into your system.  THey will have no privleges and no access to any system files.  The safer the better :)
 
 Make your directory and `chmod 0` to remove permissions.  If this failed you `echo` will print it on your screen.  You may need to append `sudo` before the command if this fails.
@@ -19,7 +25,7 @@ Make your directory and `chmod 0` to remove permissions.  If this failed you `ec
 mkdir /var/empty && chmod 0 /var/empty || echo "Failed"
 ```
 
-# Edit or Replace the Config File
+## Edit or Replace the Config File
 There are a number of imporvements made in this config file
   +uses port `443` for traffic
   +incorperates HTTPS and SSL
@@ -98,7 +104,7 @@ userlist inetusers
 ```
 Replace `[user]` and `[password]` on the last line with your desired credentials
 
-#  Port Forwarding
+## Port Forwarding
 Log into your router (I can't help you with this, there are too many brands of routers for me to know them all)
 First assign your OctoPi and Static IP address.
 Go to the `port forwarding` section of your router's settings and forward port `443` to the static IP address you just assigned your OctoPi.
