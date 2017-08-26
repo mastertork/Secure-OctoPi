@@ -1,4 +1,4 @@
-# Secure-HAProxy
+# Secure-OctoPi
 A more secure configuration for HAProxy when setting up your Octoprint instance on a Raspberry Pi.
 
 If you know what you're doing, just take my [haproxy.cfg](/haproxy.cfg) and copy it to your Pi.
