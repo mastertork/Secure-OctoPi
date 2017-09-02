@@ -6,6 +6,6 @@ Many 3D printing enthusiasts turn to the open source software [Octoprint](http:/
 
 ## Quick and Dirty
 If you know what you're doing, just take my [haproxy.cfg](/haproxy.cfg) and copy it to your Pi in the `/etc/haproxy/haproxy.cfg` folder.
-Edit the last line of the config file for your `[user]` and `[passwoerd]`.
+Edit the last line of the config file for your `[user]` and `[password]`.
 
 You will also need to create a directory `/var/empty` and `chmod 0` it to jail haproxy once it's finished loading.
